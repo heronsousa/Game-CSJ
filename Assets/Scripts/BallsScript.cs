@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallsScript : MonoBehaviour
-{
+public class BallsScript : MonoBehaviour {
+
+    public float speed;
+
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+        transform.Rotate(new Vector3(0f, 0f, speed * Time.deltaTime));
     }
 }

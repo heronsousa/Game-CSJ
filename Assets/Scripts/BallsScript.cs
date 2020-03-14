@@ -5,6 +5,7 @@ using UnityEngine;
 public class BallsScript : MonoBehaviour {
 
     public float speed;
+    public bool right;
 
     // Start is called before the first frame update
     void Start() {
@@ -13,6 +14,15 @@ public class BallsScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        transform.Rotate(new Vector3(0f, 0f, speed * Time.deltaTime));
+        if(Input.GetMouseButtonDown(0)) {
+            right = !right;
+        }
+
+        if(right) {
+            transform.Rotate(new Vector3(0f, 0f, speed * Time.deltaTime));
+        } else {
+            transform.Rotate(new Vector3(0f, 0f, -speed * Time.deltaTime));
+        }
+
     }
 }

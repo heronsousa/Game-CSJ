@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallsScript : MonoBehaviour {
 
-    public float speed;
+    public float speed = 250f;
     public bool right;
 
     // Start is called before the first frame update

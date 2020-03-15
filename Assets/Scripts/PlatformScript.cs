@@ -13,7 +13,7 @@ public class PlatformScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        transform.localScale = new Vector2(Mathf.PingPong(Time.time, 1.2f), transform.localScale.y);
+        transform.localScale = new Vector2(Mathf.PingPong(Time.time * 0.5f, 1), transform.localScale.y);
 
         transform.Translate(new Vector2(0f, speed * Time.deltaTime));
     }

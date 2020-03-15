@@ -7,10 +7,8 @@ public class BallsScript : MonoBehaviour {
     public float speed = 250f;
     public bool right;
 
-    // Start is called before the first frame update
-    void Start() {
-        
-    }
+    public GameObject gameOver;
+    public int score = 0;
 
     // Update is called once per frame
     void Update() {
@@ -24,5 +22,13 @@ public class BallsScript : MonoBehaviour {
             transform.Rotate(new Vector3(0f, 0f, -speed * Time.deltaTime));
         }
 
+    }
+
+    public void GameOver() {
+        gameOver.SetActive(true);
+    }
+
+    public void UpdateScore() {
+        score++;
     }
 }

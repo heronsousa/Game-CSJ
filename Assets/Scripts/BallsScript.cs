@@ -13,6 +13,12 @@ public class BallsScript : MonoBehaviour {
     public int score = 0;
 
     public Text scoreText;
+    public Text highScore;
+
+     // Start is called before the first frame update
+    void Start() {
+        highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+    }
 
     // Update is called once per frame
     void Update() {
@@ -38,5 +44,10 @@ public class BallsScript : MonoBehaviour {
     public void UpdateScore() {
         score++;
         scoreText.text = score.ToString();
+
+        if(score > PlayerPrefs.GetInt("HighScore", 0)) {
+            PlayerPrefs.SetInt("HighScore", score);
+            highScore.text = score.ToString();
+        }
     }
 }
